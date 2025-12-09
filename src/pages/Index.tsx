@@ -9,7 +9,7 @@ const Index = () => {
       name: "Горы включены",
       price: "от 8 500 ₽",
       period: "за ночь",
-      image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&q=80",
+      color: "bg-blue-500",
       features: [
         "Трансфер Отель — Курорт — Отель",
         "Завтрак включен"
@@ -21,7 +21,7 @@ const Index = () => {
       price: "от 12 500 ₽",
       period: "за ночь",
       badge: "Популярно",
-      image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80",
+      color: "bg-purple-600",
       features: [
         "Трансфер Отель — Красная Поляна — Отель",
         "Завтрак включен",
@@ -33,7 +33,7 @@ const Index = () => {
       name: "Горы включены + Газпром Поляна",
       price: "от 14 500 ₽",
       period: "за ночь",
-      image: "https://images.unsplash.com/photo-1483479737040-f6ab03c41d42?w=800&q=80",
+      color: "bg-orange-500",
       features: [
         "Трансфер Отель — Газпром — Отель",
         "Завтрак включен",
@@ -48,19 +48,19 @@ const Index = () => {
       icon: "Waves", 
       title: "Аквазона с подогревом", 
       description: "Круглогодичный бассейн бесплатно",
-      image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=80"
+      color: "bg-cyan-500"
     },
     { 
       icon: "Package", 
       title: "Хранение снаряжения", 
       description: "Специально оборудованные комнаты",
-      image: "https://images.unsplash.com/photo-1544986581-efac024faf62?w=600&q=80"
+      color: "bg-indigo-500"
     },
     { 
       icon: "Clock", 
       title: "Ранний заезд", 
       description: "Без дополнительной платы",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
+      color: "bg-pink-500"
     }
   ];
 
@@ -68,19 +68,19 @@ const Index = () => {
     {
       title: "Олимпийский парк",
       description: "Знаменитые спортивные объекты Олимпиады-2014",
-      image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80",
+      color: "bg-green-600",
       distance: "5 мин"
     },
     {
       title: "Парк Южные культуры",
       description: "Ботанический сад с редкими растениями",
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+      color: "bg-emerald-600",
       distance: "10 мин"
     },
     {
       title: "Орнитологический парк",
       description: "Более 200 видов птиц со всего мира",
-      image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600&q=80",
+      color: "bg-teal-600",
       distance: "15 мин"
     }
   ];
@@ -94,14 +94,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=2000&q=80')"
-          }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700">
         
         <div className="relative z-10 text-center text-white px-4 animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl">
@@ -148,11 +141,8 @@ const Index = () => {
                   </div>
                 )}
                 
-                <div 
-                  className="h-64 bg-cover bg-center relative"
-                  style={{ backgroundImage: `url('${plan.image}')` }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className={`h-48 ${plan.color} flex items-center justify-center`}>
+                  <Icon name="Mountain" size={64} className="text-white/90" />
                 </div>
                 
                 <div className="p-8">
@@ -224,10 +214,9 @@ const Index = () => {
                 key={index}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md"
               >
-                <div 
-                  className="h-56 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${item.image}')` }}
-                />
+                <div className={`h-32 ${item.color} flex items-center justify-center`}>
+                  <Icon name={item.icon as any} size={48} className="text-white" />
+                </div>
                 <div className="p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-blue-100 p-4 rounded-xl">
@@ -285,12 +274,12 @@ const Index = () => {
               </div>
             </div>
 
-            <div 
-              className="h-[500px] rounded-3xl bg-cover bg-center shadow-xl"
-              style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80')"
-              }}
-            />
+            <div className="h-[500px] rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-xl flex items-center justify-center">
+              <div className="text-white text-center p-8">
+                <Icon name="MapPin" size={80} className="mx-auto mb-6 opacity-50" />
+                <p className="text-2xl font-bold">Первая береговая линия Сочи</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -310,10 +299,8 @@ const Index = () => {
                 key={index}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md"
               >
-                <div 
-                  className="h-64 bg-cover bg-center relative"
-                  style={{ backgroundImage: `url('${attraction.image}')` }}
-                >
+                <div className={`h-48 ${attraction.color} flex items-center justify-center relative`}>
+                  <Icon name="MapPin" size={56} className="text-white/80" />
                   <div className="absolute top-6 right-6">
                     <Badge className="bg-white text-gray-900 px-4 py-2 text-base font-semibold">
                       {attraction.distance}

@@ -9,7 +9,7 @@ const Index = () => {
       name: "Горы включены",
       price: "от 8 500 ₽",
       period: "за ночь",
-      image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&q=80",
       features: [
         "Трансфер Отель — Курорт — Отель",
         "Завтрак включен"
@@ -21,7 +21,7 @@ const Index = () => {
       price: "от 12 500 ₽",
       period: "за ночь",
       badge: "Популярно",
-      image: "https://images.unsplash.com/photo-1551582045-6ec9c11d8697?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80",
       features: [
         "Трансфер Отель — Красная Поляна — Отель",
         "Завтрак включен",
@@ -33,7 +33,7 @@ const Index = () => {
       name: "Горы включены + Газпром Поляна",
       price: "от 14 500 ₽",
       period: "за ночь",
-      image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1483479737040-f6ab03c41d42?w=800&q=80",
       features: [
         "Трансфер Отель — Газпром — Отель",
         "Завтрак включен",
@@ -48,19 +48,19 @@ const Index = () => {
       icon: "Waves", 
       title: "Аквазона с подогревом", 
       description: "Круглогодичный бассейн бесплатно",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
+      image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=80"
     },
     { 
       icon: "Package", 
       title: "Хранение снаряжения", 
       description: "Специально оборудованные комнаты",
-      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=600&q=80"
+      image: "https://images.unsplash.com/photo-1544986581-efac024faf62?w=600&q=80"
     },
     { 
       icon: "Clock", 
       title: "Ранний заезд", 
       description: "Без дополнительной платы",
-      image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80"
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
     }
   ];
 
@@ -68,19 +68,19 @@ const Index = () => {
     {
       title: "Олимпийский парк",
       description: "Знаменитые спортивные объекты Олимпиады-2014",
-      image: "https://images.unsplash.com/photo-1590739225017-e52fad218c22?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80",
       distance: "5 мин"
     },
     {
       title: "Парк Южные культуры",
       description: "Ботанический сад с редкими растениями",
-      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
       distance: "10 мин"
     },
     {
       title: "Орнитологический парк",
       description: "Более 200 видов птиц со всего мира",
-      image: "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600&q=80",
       distance: "15 мин"
     }
   ];
@@ -125,27 +125,6 @@ const Index = () => {
 
       <section className="py-24 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-6">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-              Условия бронирования
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6 mb-20">
-            {conditions.map((condition, index) => (
-              <Card 
-                key={index}
-                className="p-8 text-center hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-md"
-              >
-                <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Icon name={condition.icon as any} size={32} className="text-blue-600" />
-                </div>
-                <h3 className="font-bold mb-3 text-lg">{condition.title}</h3>
-                <p className="text-gray-600 text-lg">{condition.value}</p>
-              </Card>
-            ))}
-          </div>
-
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
               Выберите свой тариф
@@ -203,6 +182,27 @@ const Index = () => {
                     Забронировать
                   </Button>
                 </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mb-6 mt-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              Условия бронирования
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {conditions.map((condition, index) => (
+              <Card 
+                key={index}
+                className="p-8 text-center hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-md"
+              >
+                <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Icon name={condition.icon as any} size={32} className="text-blue-600" />
+                </div>
+                <h3 className="font-bold mb-3 text-lg">{condition.title}</h3>
+                <p className="text-gray-600 text-lg">{condition.value}</p>
               </Card>
             ))}
           </div>

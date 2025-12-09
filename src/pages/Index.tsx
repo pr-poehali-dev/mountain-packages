@@ -382,10 +382,7 @@ const Index = () => {
               <Icon name="Calendar" className="mr-2" size={22} />
               Забронировать сейчас
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-10 py-7 border-2 border-white text-white hover:bg-white/10">
-              <Icon name="MessageCircle" className="mr-2" size={22} />
-              Задать вопрос
-            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-10 py-7 border-2 border-white text-white hover:bg-white/10">Позвонить</Button>
           </div>
         </div>
       </section>

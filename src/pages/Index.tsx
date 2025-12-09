@@ -9,7 +9,7 @@ const Index = () => {
       name: "Горы включены",
       price: "от 8 500 ₽",
       period: "за ночь",
-      color: "bg-blue-500",
+      image: "https://picsum.photos/seed/ski1/800/600",
       features: [
         "Трансфер Отель — Курорт — Отель",
         "Завтрак включен"
@@ -21,7 +21,7 @@ const Index = () => {
       price: "от 12 500 ₽",
       period: "за ночь",
       badge: "Популярно",
-      color: "bg-purple-600",
+      image: "https://picsum.photos/seed/ski2/800/600",
       features: [
         "Трансфер Отель — Красная Поляна — Отель",
         "Завтрак включен",
@@ -33,7 +33,7 @@ const Index = () => {
       name: "Горы включены + Газпром Поляна",
       price: "от 14 500 ₽",
       period: "за ночь",
-      color: "bg-orange-500",
+      image: "https://picsum.photos/seed/ski3/800/600",
       features: [
         "Трансфер Отель — Газпром — Отель",
         "Завтрак включен",
@@ -48,19 +48,19 @@ const Index = () => {
       icon: "Waves", 
       title: "Аквазона с подогревом", 
       description: "Круглогодичный бассейн бесплатно",
-      color: "bg-cyan-500"
+      image: "https://picsum.photos/seed/pool1/600/400"
     },
     { 
       icon: "Package", 
       title: "Хранение снаряжения", 
       description: "Специально оборудованные комнаты",
-      color: "bg-indigo-500"
+      image: "https://picsum.photos/seed/storage1/600/400"
     },
     { 
       icon: "Clock", 
       title: "Ранний заезд", 
       description: "Без дополнительной платы",
-      color: "bg-pink-500"
+      image: "https://picsum.photos/seed/hotel1/600/400"
     }
   ];
 
@@ -68,19 +68,19 @@ const Index = () => {
     {
       title: "Олимпийский парк",
       description: "Знаменитые спортивные объекты Олимпиады-2014",
-      color: "bg-green-600",
+      image: "https://picsum.photos/seed/olympic1/600/400",
       distance: "5 мин"
     },
     {
       title: "Парк Южные культуры",
       description: "Ботанический сад с редкими растениями",
-      color: "bg-emerald-600",
+      image: "https://picsum.photos/seed/park1/600/400",
       distance: "10 мин"
     },
     {
       title: "Орнитологический парк",
       description: "Более 200 видов птиц со всего мира",
-      color: "bg-teal-600",
+      image: "https://picsum.photos/seed/birds1/600/400",
       distance: "15 мин"
     }
   ];
@@ -94,7 +94,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <img 
+          src="https://picsum.photos/seed/mountains1/2000/1000" 
+          alt="Mountains" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
         
         <div className="relative z-10 text-center text-white px-4 animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl">
@@ -141,8 +147,13 @@ const Index = () => {
                   </div>
                 )}
                 
-                <div className={`h-48 ${plan.color} flex items-center justify-center`}>
-                  <Icon name="Mountain" size={64} className="text-white/90" />
+                <div className="h-64 relative overflow-hidden">
+                  <img 
+                    src={plan.image} 
+                    alt={plan.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 
                 <div className="p-8">
@@ -214,9 +225,11 @@ const Index = () => {
                 key={index}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md"
               >
-                <div className={`h-32 ${item.color} flex items-center justify-center`}>
-                  <Icon name={item.icon as any} size={48} className="text-white" />
-                </div>
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-56 object-cover"
+                />
                 <div className="p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-blue-100 p-4 rounded-xl">
@@ -274,12 +287,11 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="h-[500px] rounded-3xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-xl flex items-center justify-center">
-              <div className="text-white text-center p-8">
-                <Icon name="MapPin" size={80} className="mx-auto mb-6 opacity-50" />
-                <p className="text-2xl font-bold">Первая береговая линия Сочи</p>
-              </div>
-            </div>
+            <img 
+              src="https://picsum.photos/seed/sochi1/1000/800" 
+              alt="Sochi location"
+              className="h-[500px] w-full rounded-3xl object-cover shadow-xl"
+            />
           </div>
         </div>
       </section>
@@ -299,8 +311,12 @@ const Index = () => {
                 key={index}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md"
               >
-                <div className={`h-48 ${attraction.color} flex items-center justify-center relative`}>
-                  <Icon name="MapPin" size={56} className="text-white/80" />
+                <div className="h-64 relative overflow-hidden">
+                  <img 
+                    src={attraction.image} 
+                    alt={attraction.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute top-6 right-6">
                     <Badge className="bg-white text-gray-900 px-4 py-2 text-base font-semibold">
                       {attraction.distance}

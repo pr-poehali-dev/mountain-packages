@@ -9,7 +9,7 @@ const Index = () => {
       name: "Горы включены",
       price: "от 8 500 ₽",
       period: "за ночь",
-      image: "https://picsum.photos/seed/ski1/800/600",
+      image: "https://cdn.poehali.dev/files/_L6A6896.jpg",
       features: [
         "Трансфер Отель — Курорт — Отель",
         "Завтрак включен"
@@ -21,7 +21,7 @@ const Index = () => {
       price: "от 12 500 ₽",
       period: "за ночь",
       badge: "Популярно",
-      image: "https://picsum.photos/seed/ski2/800/600",
+      image: "https://cdn.poehali.dev/files/горы включены.jpg",
       features: [
         "Трансфер Отель — Красная Поляна — Отель",
         "Завтрак включен",
@@ -33,7 +33,7 @@ const Index = () => {
       name: "Горы включены + Газпром Поляна",
       price: "от 14 500 ₽",
       period: "за ночь",
-      image: "https://picsum.photos/seed/ski3/800/600",
+      image: "https://cdn.poehali.dev/files/EFR_3150-2.jpg",
       features: [
         "Трансфер Отель — Газпром — Отель",
         "Завтрак включен",
@@ -43,24 +43,29 @@ const Index = () => {
     }
   ];
 
+  const included = [
+    { icon: "Bus", title: "Трансфер", description: "Отель — Курорт — Отель" },
+    { icon: "Coffee", title: "Завтрак", description: "Включен в стоимость" }
+  ];
+
   const benefits = [
     { 
       icon: "Waves", 
       title: "Аквазона с подогревом", 
       description: "Круглогодичный бассейн бесплатно",
-      image: "https://picsum.photos/seed/pool1/600/400"
+      image: "https://cdn.poehali.dev/files/DSC03069-Panorama111.jpg"
     },
     { 
       icon: "Package", 
       title: "Хранение снаряжения", 
       description: "Специально оборудованные комнаты",
-      image: "https://picsum.photos/seed/storage1/600/400"
+      image: "https://cdn.poehali.dev/files/RosaMarch170322_by@asyart-231.JPG"
     },
     { 
       icon: "Clock", 
       title: "Ранний заезд", 
       description: "Без дополнительной платы",
-      image: "https://picsum.photos/seed/hotel1/600/400"
+      image: "https://cdn.poehali.dev/files/_L6A6896.jpg"
     }
   ];
 
@@ -68,19 +73,19 @@ const Index = () => {
     {
       title: "Олимпийский парк",
       description: "Знаменитые спортивные объекты Олимпиады-2014",
-      image: "https://picsum.photos/seed/olympic1/600/400",
+      image: "https://cdn.poehali.dev/files/EFR_3150-2.jpg",
       distance: "5 мин"
     },
     {
       title: "Парк Южные культуры",
       description: "Ботанический сад с редкими растениями",
-      image: "https://picsum.photos/seed/park1/600/400",
+      image: "https://cdn.poehali.dev/files/DSC03069-Panorama111.jpg",
       distance: "10 мин"
     },
     {
       title: "Орнитологический парк",
       description: "Более 200 видов птиц со всего мира",
-      image: "https://picsum.photos/seed/birds1/600/400",
+      image: "https://cdn.poehali.dev/files/RosaMarch170322_by@asyart-231.JPG",
       distance: "15 мин"
     }
   ];
@@ -96,7 +101,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
-          src="https://picsum.photos/seed/mountains1/2000/1000" 
+          src="https://cdn.poehali.dev/files/горы включены.jpg" 
           alt="Mountains" 
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -186,11 +191,42 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mb-6 mt-20">
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              Включено в тариф
+            </h2>
+            <p className="text-xl text-gray-600">Что входит в стоимость каждого пакета</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {included.map((item, index) => (
+              <Card 
+                key={index}
+                className="p-8 text-center hover:shadow-xl transition-all duration-300 border-0 shadow-md"
+              >
+                <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Icon name={item.icon as any} size={32} className="text-blue-600" />
+                </div>
+                <h3 className="font-bold mb-3 text-xl">{item.title}</h3>
+                <p className="text-gray-600 text-lg">{item.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
               Условия бронирования
             </h2>
+            <p className="text-xl text-gray-600">Простые и удобные правила размещения</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
@@ -288,7 +324,7 @@ const Index = () => {
             </div>
 
             <img 
-              src="https://picsum.photos/seed/sochi1/1000/800" 
+              src="https://cdn.poehali.dev/files/_L6A6896.jpg" 
               alt="Sochi location"
               className="h-[500px] w-full rounded-3xl object-cover shadow-xl"
             />

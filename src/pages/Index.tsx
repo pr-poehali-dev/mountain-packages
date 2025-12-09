@@ -378,10 +378,7 @@ const Index = () => {
             Забронируйте номер прямо сейчас и получите незабываемые впечатления
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button size="lg" className="text-lg px-10 py-7 bg-white text-blue-600 hover:bg-gray-100">
-              <Icon name="Calendar" className="mr-2" size={22} />
-              Забронировать сейчас
-            </Button>
+            <Button size="lg" className="text-lg px-10 py-7 bg-white text-blue-600 hover:bg-gray-100">Забронировать</Button>
             <Button size="lg" variant="outline" className="text-lg px-10 py-7 border-2 border-white text-white hover:bg-white/10">Позвонить</Button>
           </div>
         </div>

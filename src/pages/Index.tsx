@@ -184,9 +184,9 @@ const Index = () => {
           <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-8">
             А уже со следующего дня отправляетесь в горнолыжный курорт - без сложной логистики, очереди за прогулочным билетом и лишних расходов.
           </p>
-          <p className="text-2xl md:text-3xl text-gray-900 font-semibold leading-relaxed">
-            Пакет "Горы включены" - это отдых, в котором все продумано заранее.
-          </p>
+          <p className="text-2xl md:text-3xl text-gray-900 font-semibold leading-relaxed">Пакет "Горы включены" - это отдых, в котором все продумано заранее.
+
+Для кого этот пакет - для тех кто хочет мягкий, комфортный отдых у моря и возможность ездить в горы, когда хочется</p>
         </div>
       </section>
 

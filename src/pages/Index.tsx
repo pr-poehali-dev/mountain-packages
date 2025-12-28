@@ -19,7 +19,6 @@ const Index = () => {
         "Хранение горнолыжного снаряжения",
         "Ранний заезд без дополнительной платы",
         "20% скидка на услуги СПА",
-        "Ски-пасс на горнолыжный курорт",
         "Ежедневная уборка",
         "Смена белья 1 раз в 3 дня",
         "Смена гостевых принадлежностей"
@@ -140,10 +139,30 @@ const Index = () => {
   ];
 
   const conditions = [
-    { title: "Заезд / Выезд", value: "14:00 / 12:00", icon: "CalendarCheck" },
-    { title: "Минимальный срок", value: "от 2 ночей", icon: "Calendar" },
-    { title: "Бронирование", value: "Онлайн или по телефону", icon: "Phone" },
-    { title: "Отмена", value: "Бесплатно за 7 дней", icon: "RotateCcw" }
+    { 
+      title: "Минимальный период бронирования", 
+      value: "4 дня / 3 ночи" 
+    },
+    { 
+      title: "Пакетные услуги", 
+      value: "Предоставляются в полном объёме, отказ от части услуг невозможен. Перерасчет стоимости неиспользованных услуг не производится." 
+    },
+    { 
+      title: "Трансфер", 
+      value: "Предоставляется по расписанию отеля по предварительной записи. В день заезда трансфер не предоставляется. Запись на стойках продаж экскурсий." 
+    },
+    { 
+      title: "Заезд с", 
+      value: "15:00" 
+    },
+    { 
+      title: "Выезд до", 
+      value: "12:00" 
+    },
+    { 
+      title: "Услуга \"поздний выезд\"", 
+      value: "Возможна при наличии свободных номеров. Дополнительная плата — 50% от стоимости одних суток согласно Правилам предоставления гостиничных услуг." 
+    }
   ];
 
   return (
@@ -176,17 +195,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center mb-20">
-          <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-8">
-            Вы приезжаете к морю, заселяетесь в комфортный номер, отдыхаете после дороги и наслаждаетесь атмосферой курорта.
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-4 text-justify">
+            Вы приезжаете к морю, заселяетесь в комфортный номер, отдыхаете после дороги и наслаждаетесь атмосферой курорта. А уже со следующего дня отправляетесь в горнолыжный курорт - без сложной логистики, очереди за прогулочным билетом и лишних расходов.
           </p>
-          <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-8">
-            А уже со следующего дня отправляетесь в горнолыжный курорт - без сложной логистики, очереди за прогулочным билетом и лишних расходов.
+          <p className="text-base md:text-lg text-gray-900 font-semibold leading-relaxed mb-4 text-justify">
+            Пакет "Горы включены" - это отдых, в котором все продумано заранее.
           </p>
-          <p className="text-2xl md:text-3xl text-gray-900 font-semibold leading-relaxed">Пакет "Горы включены" - это отдых, в котором все продумано заранее.
-
-Для кого этот пакет - для тех кто хочет мягкий, комфортный отдых у моря и возможность ездить в горы, когда хочется</p>
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed text-justify">
+            <span className="font-bold">Для кого этот пакет:</span> для тех кто хочет мягкий, комфортный отдых у моря и возможность ездить в горы, когда хочется.
+          </p>
         </div>
       </section>
 
@@ -199,7 +218,7 @@ const Index = () => {
             <p className="text-xl text-gray-600">Четыре пакета для комфортного отдыха в горах</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {plans.map((plan, index) => (
               <Card 
                 key={index}
@@ -257,32 +276,6 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-              Включено в тариф
-            </h2>
-            <p className="text-xl text-gray-600">Что входит в стоимость каждого пакета</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {included.map((item, index) => (
-              <Card 
-                key={index}
-                className="p-8 text-center hover:shadow-xl transition-all duration-300 border-0 shadow-md"
-              >
-                <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Icon name={item.icon as any} size={32} className="text-blue-600" />
-                </div>
-                <h3 className="font-bold mb-3 text-xl">{item.title}</h3>
-                <p className="text-gray-600 text-lg">{item.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-24 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -292,17 +285,14 @@ const Index = () => {
             <p className="text-xl text-gray-600">Простые и удобные правила размещения</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {conditions.map((condition, index) => (
               <Card 
                 key={index}
-                className="p-8 text-center hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-md"
+                className="p-6 hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-md"
               >
-                <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Icon name={condition.icon as any} size={32} className="text-blue-600" />
-                </div>
-                <h3 className="font-bold mb-3 text-lg">{condition.title}</h3>
-                <p className="text-gray-600 text-lg">{condition.value}</p>
+                <h3 className="font-bold mb-3 text-lg text-gray-900">{condition.title}</h3>
+                <p className="text-gray-600 text-base leading-relaxed">{condition.value}</p>
               </Card>
             ))}
           </div>
@@ -441,8 +431,8 @@ const Index = () => {
             Забронируйте номер прямо сейчас и получите незабываемые впечатления
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button size="lg" className="text-lg px-10 py-7 bg-white text-blue-600 hover:bg-gray-100">Забронировать</Button>
-            <Button size="lg" variant="outline" className="text-lg px-10 py-7 border-2 border-white text-white hover:bg-white/10">Позвонить</Button>
+            <Button size="lg" className="text-lg px-10 py-7 bg-blue-600 hover:bg-blue-700 text-white">Забронировать</Button>
+            <Button size="lg" className="text-lg px-10 py-7 bg-blue-600 hover:bg-blue-700 text-white">Позвонить</Button>
           </div>
         </div>
       </section>

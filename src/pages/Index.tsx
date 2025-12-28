@@ -152,12 +152,8 @@ const Index = () => {
       value: "Предоставляется по расписанию отеля по предварительной записи. В день заезда трансфер не предоставляется. Запись на стойках продаж экскурсий." 
     },
     { 
-      title: "Заезд с", 
-      value: "15:00" 
-    },
-    { 
-      title: "Выезд до", 
-      value: "12:00" 
+      title: "Заезд / Выезд", 
+      value: "Заезд с 15:00 / Выезд до 12:00" 
     },
     { 
       title: "Услуга \"поздний выезд\"", 
@@ -291,8 +287,8 @@ const Index = () => {
                 key={index}
                 className="p-6 hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-md"
               >
-                <h3 className="font-bold mb-3 text-lg text-gray-900">{condition.title}</h3>
-                <p className="text-gray-600 text-base leading-relaxed">{condition.value}</p>
+                <h3 className="font-bold mb-3 text-xl text-gray-900">{condition.title}</h3>
+                <p className="text-gray-800 text-base leading-relaxed font-medium">{condition.value}</p>
               </Card>
             ))}
           </div>
@@ -303,7 +299,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-              Бесплатно для гостей
+              Дополнительные услуги без оплаты
             </h2>
             <p className="text-xl text-gray-600">Дополнительные услуги без доплаты</p>
           </div>
@@ -431,8 +427,8 @@ const Index = () => {
             Забронируйте номер прямо сейчас и получите незабываемые впечатления
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button size="lg" className="text-lg px-10 py-7 bg-blue-600 hover:bg-blue-700 text-white">Забронировать</Button>
-            <Button size="lg" className="text-lg px-10 py-7 bg-blue-600 hover:bg-blue-700 text-white">Позвонить</Button>
+            <Button size="lg" className="text-lg px-10 py-7 bg-white text-blue-600 hover:bg-gray-100 shadow-lg">Забронировать</Button>
+            <Button size="lg" className="text-lg px-10 py-7 bg-white text-blue-600 hover:bg-gray-100 shadow-lg">Позвонить</Button>
           </div>
         </div>
       </section>
